@@ -1,0 +1,45 @@
+{% extends 'core/core.html' %}
+{% load static %}
+
+
+
+{% block link %}
+
+    <link rel="stylesheet" href="{% static 'css/fontawesome-free-6.4.0-web/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/to_do_list.css' %}">
+{% endblock link %}
+
+{% block title %}Home Page
+{% endblock title %}
+
+{% block content %}
+    <section class="to-do-section">
+
+
+        {% if tasks %}
+        {% for i in tasks %}
+        <div class="to-do-card">
+            <div class="description">
+            <h2>{{i.Title}}</h2>
+            <p>{{i.description}}</p>
+        </div>
+            <div>
+                <p>{{i.Created_at}}</p>
+                <a href="{% url 'core:Edit' i.pk %}"><i class="fa-regular fa-pen-to-square"></i></a>
+                <a href="{% url 'core:delete' i.pk %}"><i class="fa-regular fa-circle-xmark"></i></a>
+            </div>
+        </div>
+
+        {% endfor %}
+        {% else %}
+        <h2> You don't have TodoCrad yet!</h2>
+
+
+        {% endif %}
+    </section>
+    <!-- <div class="go-up">
+        <a href="">
+        <i class="fa-regular fa-square-caret-up"></i>
+    </a>
+    </div> -->
+    {% endblock content %}

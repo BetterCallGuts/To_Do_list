@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo| {% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    {% block link %}{% endblock link %}
+
+</head>
+<body>
+    <header>
+        <a href="{% url 'core:HomePage' %}">
+            <h1><span class="purple-letter">T</span><span class="rotate-letter">o</span><span class="purple-letter">d</span><span class="rotate-letter">o</span></h1>
+        </a>
+        <ul>
+
+            
+            <li><a href="{% url 'core:AddATask' %}">Add Task</a></li>
+            {% if request.user.is_authenticated %}
+            
+            <li><a href="{% url 'core:Logout' %}">Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'core:Login' %}">Login</a></li>
+            <li><a href="{% url 'core:Signup' %}">Sign up</a></li>
+
+            {% endif %}
+        </ul>
+    </header>
+
+
+    {% block content %}{% endblock content %}
+
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+{% extends 'core/core.html' %}
+{% load static %}
+
+{% block link %}<link rel="stylesheet" href="{% static 'css/signup.css' %}">{% endblock link %}
+{% block title %}Signup{% endblock title %}
+
+{% block content %}
+    <div class="form-add-task">
+        <form action="" method="post">
+            {% csrf_token %}
+            {% if messages %}
+            <div class="me">
+                {% for message in messages %}
+                <p>{{message}}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+            <h1>Sign up</h1>
+            <div class="title-task">
+                <label for="">username:</label>
+                <input type="text" name='username'>
+    
+            </div>
+            <div class="title-task">
+                <label for="">password:</label>
+                <input type="password" name='passw'>
+    
+            </div> 
+            <div class="description-task">
+                <label for="">confirm password:</label>
+                <input type="password" name='passw2'>
+            </div>
+    
+            <input type="submit" value="Save!" class="btn">
+            <a href="{% url 'core:Login' %}">
+                have an account? Login?</a>
+        </form>
+    </div>
+    {% endblock content %}

@@ -1,0 +1,37 @@
+{% extends 'core/core.html' %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/addtask.css' %}">
+{% endblock link %}
+
+{% block title %}add task{% endblock title %}
+
+{% block content %}
+
+    <div class="form-add-task">
+    <form action="" method="post">
+        {% csrf_token %}
+        {% if messages %}
+            <div class="me">
+                {% for message in messages %}
+                <p>{{message}}</p>
+                {% endfor %}    
+            </div>
+            {% endif %}
+        <h1>Add a Task</h1>
+        <div class="title-task">
+            <label for="">Task Title:</label>
+            <input type="text" name='ti'>
+
+        </div>
+        <div class="description-task">
+            <label for="">Task desctiption:</label>
+            <input type="text" name='description'>
+        </div>
+
+        <input type="submit" value="Save!" class="btn">
+    </form>
+</div>
+
+
+{% endblock content %}
