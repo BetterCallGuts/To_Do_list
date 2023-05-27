@@ -1,0 +1,72 @@
+.form-add-task{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form{
+    box-shadow: 0px 0px 10px black;
+    height: 400px;
+    width: 400px;
+    padding: 100px;
+    background-color: rgb(158, 158, 158);
+    gap: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+}
+
+form div{
+    display: flex;
+    gap: 30px;
+
+}
+form div label{
+    width: 21%;
+    color: black;
+    font-size: 1.2rem;
+}
+form div input{
+    background-color: rgb(131, 97, 164);
+    border: none 0px;
+    outline: none 0px;
+    border-radius: 20px;
+    padding: 10px;
+    transition: .4s;
+}
+
+form div input:focus{
+    box-shadow: 0px 0px 10px black;
+    transform: scale(1.05);
+
+}
+
+form  .btn{
+    background-color: rgb(114, 39, 114);
+    outline: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px 30px;
+    border-radius: 10px;
+    color:white;
+    transition: .4s;
+}
+form .btn:hover{
+    background-color: rgba(114, 39, 114, 0.536);
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px black;
+
+}
+
+.me{
+    background-color: rgba(255, 0, 0, 0.408);
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+.description-task{
+    padding: 10px 10px;
+}
