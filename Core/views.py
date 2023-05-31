@@ -49,7 +49,7 @@ def Login(request):
                 return redirect('core:Login')
             user = auth.authenticate(username=user_name, password=pasword)
             if user is not None:
-                auth.login(user)
+                auth.login(request, user)
                 return redirect('core:HomePage')
             else:
                 messages.info(request, 'invalid user name or password!')
